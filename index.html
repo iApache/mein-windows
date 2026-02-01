@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction - Bald online</title>
+    <style>
+        /* Grunddesign */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a; /* Edles Dunkelgrau */
+            color: #ffffff;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        /* 3D Schriftzug */
+        .title {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #ffcc00; /* Baustellen-Gelb */
+            letter-spacing: 5px;
+            margin: 0;
+            line-height: 1;
+            text-shadow: 
+                0 1px 0 #cc9900,
+                0 2px 0 #b38600,
+                0 3px 0 #997300,
+                0 4px 0 #806000,
+                0 5px 0 #664d00,
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+            animation: float-title 3s ease-in-out infinite;
+        }
+
+        @keyframes float-title {
+            0%, 100% { transform: translateY(0) rotate(-1deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-top: 40px;
+            color: #aaa;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        /* Bauarbeiter Emojis */
+        .worker {
+            position: absolute;
+            font-size: 50px;
+            z-index: -1;
+            opacity: 0.6;
+            animation: wander 15s linear infinite;
+        }
+
+        /* Verschiedene Positionen & Animationen für die Emojis */
+        .w1 { top: 10%; left: -10%; animation-delay: 0s; }
+        .w2 { top: 60%; left: -10%; animation-delay: 5s; }
+        .w3 { top: 30%; right: -10%; animation-delay: 2s; }
+        .w4 { bottom: 10%; right: -10%; animation-delay: 8s; }
+
+        @keyframes wander {
+            0% { transform: translateX(0) rotate(0deg); left: -10%; }
+            100% { transform: translateX(120vw) rotate(360deg); left: 100%; }
+        }
+
+        /* Impressum Style */
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8rem;
+        }
+
+        .footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="worker w1">👷‍♂️</div>
+    <div class="worker w2">🚧</div>
+    <div class="worker w3">⛏️</div>
+    <div class="worker w4">🛠️</div>
+
+    <h1 class="title">Under<br>Construction</h1>
+    
+    <p class="subtitle">
+        Hier entsteht etwas Neues. Wir werkeln gerade noch an den Details.<br>
+        Besuchen Sie uns bald wieder!
+    </p>
+
+    <div class="footer">
+        <a href="#impressum">Impressum</a> | <a href="#datenschutz">Datenschutz</a>
+        <div id="impressum" style="margin-top: 10px; color: #666; font-size: 0.7rem;">
+            Verantwortlich für diese Seite: Dein Name, Deine Straße, Deine Stadt
+        </div>
+    </div>
+
+</body>
+</html>
