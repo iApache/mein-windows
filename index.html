@@ -110,13 +110,43 @@
         Besuchen Sie uns bald wieder!
     </p>
 
-    <div class="footer">
-        <a href="#impressum">Impressum</a> | <a href="#datenschutz">Datenschutz</a>
-        <div id="impressum" style="margin-top: 10px; color: #666; font-size: 0.7rem;">
-            Verantwortlich für diese Seite: Dieter Pfüller, Herriger Str. 52a, 50374 Erftstadt
+<div class="footer">
+        <a href="#impressum" onclick="showText('imp')">Impressum</a> | 
+        <a href="#datenschutz" onclick="showText('data')">Datenschutz</a>
+
+        <div id="imp" style="display:none; margin-top: 20px; color: #ccc; font-size: 0.8rem; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 8px;">
+            <strong>Impressum</strong><br><br>
+            Dieter Pfüller<br>
+            Herriger Str. 52a<br>
+            50374 Eftstadt<br><br>
+            E-Mail: iApache@web.de<br>
+            
+        </div>
+
+        <div id="data" style="display:none; margin-top: 20px; color: #ccc; font-size: 0.8rem; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 8px; max-width: 600px; text-align: left;">
+            <strong>Datenschutzerklärung</strong><br><br>
+            <strong>1. Verantwortlicher</strong><br>
+            Verantwortlich für die Datenverarbeitung auf dieser Website ist die oben im Impressum genannte Person.<br><br>
+            
+            <strong>2. Hosting über GitHub Pages</strong><br>
+            Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA) gehostet. Wenn Sie diese Seite aufrufen, werden von GitHub automatisch Log-Files erstellt (z. B. IP-Adresse, Datum, Uhrzeit, Browsertyp). Dies ist technisch notwendig, um die Website anzuzeigen und die Sicherheit zu gewährleisten. GitHub ist zertifiziert unter dem EU-US Data Privacy Framework.<br><br>
+            
+            <strong>3. Cookies</strong><br>
+            Diese Seite verwendet keine eigenen Tracking-Cookies.
         </div>
     </div>
 
-</body>
+    <script>
+        function showText(id) {
+            var imp = document.getElementById('imp');
+            var data = document.getElementById('data');
+            if(id === 'imp') {
+                imp.style.display = imp.style.display === 'none' ? 'block' : 'none';
+                data.style.display = 'none';
+            } else {
+                data.style.display = data.style.display === 'none' ? 'block' : 'none';
+                imp.style.display = 'none';
+            }
+        }
+    </script>
 
-</html>
